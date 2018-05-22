@@ -1,0 +1,23 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="clientService.selectedClient.Names" placeholder="Add name...">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="clientService.selectedClient.LastName" placeholder="Add lastname...">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="telephone" #telephone="ngModel" [(ngModel)]="clientService.selectedClient.Telephone" placeholder="Add telephone...">
+      </div>     
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-plus-circle"> Add Client</i>
+        </button>
+        <button class="btn btn-secondary" type="reset" (click)="resetForm(clientForm)">
+          <i class="fa fa-sync-alt"> Cancel</i>          
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
